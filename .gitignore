@@ -1,0 +1,51 @@
+## .NET build results
+bin/
+obj/
+out/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Rider-specific
+.idea/
+
+## Visual Studio Code
+.vscode/
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Logs
+*.log
+
+## Build results
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+*.psmdcp
+.nuget/
+packages/
+*.dll
+*.exe
+
+## DotCover
+*.dotCover
+
+## Test results
+TestResults/
+*.TestResults
+
+## Local database
+*.mdf
+*.ldf
+
+## Publish output
+publish/
