@@ -85,6 +85,10 @@ How to Run
 Ensure you have .NET SDK installed
 Clone the repository
 Navigate to the project directory
-Run dotnet run
+Ru:n dotnet run
 
 The program will display the loaded dictionary and run several test examples to demonstrate the functionality.
+
+How to Unitary Test
+Navigate to the project directory
+Run: dotnet test
