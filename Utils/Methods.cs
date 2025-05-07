@@ -62,6 +62,10 @@ namespace OldPhoneApp.Utils
                     // Backspace - remove the last character if there is one
                     if (result.Length > 0)
                         result.Remove(result.Length - 1, 1);
+
+                    // Reset consecutive count after backspace
+                    lastDigit = null;
+                    consecutiveCount = 0;
                     continue;
                 }
                 else if (c == '#')
@@ -79,35 +83,32 @@ namespace OldPhoneApp.Utils
                     continue;
                 }
 
+                // Get the values (letters) for this key
+                List<string> values = keyEntry.values;
+
                 if (c.ToString() == lastDigit?.ToString())
                 {
-                    // Same button pressed again
+                    // Same button pressed again, increment count
                     consecutiveCount++;
+
+                    // Replace the last letter with the new one
+                    if (result.Length > 0)
+                    {
+                        result.Remove(result.Length - 1, 1);
+                    }
                 }
                 else
                 {
-                    // Different button pressed
-                    lastDigit = c;
+                    // Different button pressed, reset count
                     consecutiveCount = 0;
+                    lastDigit = c;
                 }
-
-                // Get the values (letters) for this key
-                List<string> values = keyEntry.values;
 
                 // Calculate which letter in the sequence to use (cycling through available letters)
                 int letterIndex = consecutiveCount % values.Count;
 
-                // If this is a different button than before, add the letter
-                if (consecutiveCount == 0)
-                {
-                    result.Append(values[letterIndex]);
-                }
-                // If this is the same button, replace the last letter
-                else if (result.Length > 0)
-                {
-                    result.Remove(result.Length - 1, 1);
-                    result.Append(values[letterIndex]);
-                }
+                // Add the letter
+                result.Append(values[letterIndex]);
             }
 
             return result.ToString();
