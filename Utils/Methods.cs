@@ -19,7 +19,24 @@ namespace OldPhoneApp.Utils
         /// <summary>
         /// Converts an input string to the corresponding output using old phone keypad logic
         /// </summary>
-        public static string OldPhone(string input, TupleClass[] dictionary)
+        public static void printOldPhoneDictionary(TupleClass[] dictionary)
+        {
+            foreach (var ele in dictionary)
+            {
+                Console.WriteLine($"===================");
+                Console.WriteLine($"Ele.key: {ele.key}");
+                foreach (var eq in ele.values)
+                {
+                    Console.WriteLine($"Ele.value: {eq}");
+                }
+                Console.WriteLine($"===================");
+            }
+        }
+
+        /// <summary>
+        /// Converts an input string to the corresponding output using old phone keypad logic
+        /// </summary>
+        public static string OldPhone(string? input, TupleClass[] dictionary)
         {
             if (string.IsNullOrEmpty(input) || !input.EndsWith("#"))
                 return "?????";
