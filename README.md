@@ -27,8 +27,8 @@ For example:
 
 Special characters:
 
-* functions as a backspace key (deletes the last character)
-# marks the end of the input
+"Asterisc" key functions as a backspace key (deletes the last character)
+"Sharp" key marks the end of the input
 Spaces are used to pause between inputs for the same button
 
 Algorithm Explanation
@@ -36,8 +36,8 @@ The OldPhonePad method converts strings simulating old phone keypad inputs into 
 
 Validation:
 
-Check if the input is empty or doesn't end with # (the end marker)
-Remove the # from the end of the input
+Check if the input is empty or doesn't end with Sharp Key (the end marker)
+Remove the Sharp Key from the end of the input
 
 
 Dictionary Loading:
@@ -68,10 +68,10 @@ Return the constructed string as the final output
 
 Examples
 
-OldPhonePad("33#") → E (Press 3 twice for 'E')
-OldPhonePad("227*#") → B (Press 2 twice for 'B', press 7 once for 'P', then backspace with '*')
-OldPhonePad("4433555 555666#") → HELLO (Press 4 twice for 'H', 3 twice for 'E', 5 three times for 'L', etc.)
-OldPhonePad("8 8877744466*664#") → ????? (Press 8 once for 'T', pause, press 8 twice for 'U', etc.)
+OldPhonePad("33Sharp Key") → E (Press 3 twice for 'E')
+OldPhonePad("227*Sharp Key") → B (Press 2 twice for 'B', press 7 once for 'P', then backspace with '*')
+OldPhonePad("4433555 555666Sharp Key") → HELLO (Press 4 twice for 'H', 3 twice for 'E', 5 three times for 'L', etc.)
+OldPhonePad("8 8877744466*664Sharp Key") → ????? (Press 8 once for 'T', pause, press 8 twice for 'U', etc.)
 
 File Structure
 
